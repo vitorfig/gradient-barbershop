@@ -94,19 +94,25 @@
   clampVideoTo(document.getElementById('devaVideo'), 8);
   clampVideoTo(document.getElementById('maiconVideo'), 8);
 
-  // ---------- Visagismo video: start at 35s, loop from 35s ----------
+  // ---------- Visagismo video: never show before 14s, loop from 14s ----------
   var visagismoVideo = document.getElementById('visagismoVideo');
   if (visagismoVideo) {
     var START = 14;
-    var startAt35 = function () {
+    var jumpToStart = function () {
       try { visagismoVideo.currentTime = START; } catch (err) {}
       visagismoVideo.play().catch(function () {});
     };
-    visagismoVideo.addEventListener('loadedmetadata', startAt35);
-    visagismoVideo.addEventListener('ended', startAt35);
+    visagismoVideo.addEventListener('loadedmetadata', jumpToStart);
+    visagismoVideo.addEventListener('ended', jumpToStart);
+    visagismoVideo.addEventListener('seeked', function () {
+      if (visagismoVideo.currentTime >= START - 0.2) {
+        visagismoVideo.classList.add('is-ready');
+      }
+    });
     visagismoVideo.addEventListener('timeupdate', function () {
       if (visagismoVideo.duration && visagismoVideo.currentTime >= visagismoVideo.duration - 0.15) {
-        startAt35();
+        visagismoVideo.classList.remove('is-ready');
+        jumpToStart();
       }
     });
     var io = new IntersectionObserver(function (entries) {

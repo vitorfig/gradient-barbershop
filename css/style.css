@@ -127,6 +127,7 @@ section{ padding-block:clamp(3.5rem, 8vw, 6.5rem); }
 }
 .section-head h2{ font-size:clamp(1.9rem, 3.4vw, 2.8rem); margin-top:.5rem; }
 .section-head .lede{ max-width:38ch; color:var(--text-soft); font-size:1.02rem; }
+.section--dark .section-head .lede{ color:rgba(247,242,229,.82); }
 
 /* Buttons */
 .btn{

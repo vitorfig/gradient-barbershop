@@ -380,6 +380,7 @@ section{ padding-block:clamp(3.5rem, 8vw, 6.5rem); }
 }
 .experience-sound svg{ width:1.1rem; height:1.1rem; }
 .experience-copy p{ margin-top:1.1rem; color:var(--text-soft); max-width:50ch; font-size:1.03rem; }
+.experience-copy .btn{ margin-top:1.8rem; }
 .ritual-steps{ list-style:none; margin:2rem 0 0; padding:0; display:flex; flex-direction:column; }
 .ritual-steps li{
   display:flex; align-items:baseline; gap:1.1rem; padding-block:.9rem;
@@ -486,18 +487,20 @@ section{ padding-block:clamp(3.5rem, 8vw, 6.5rem); }
 
 /* ---------- Testimonials ---------- */
 .testimonials{ overflow:hidden; }
-.google-rating{
-  display:flex; align-items:center; gap:.6rem; flex-wrap:wrap;
-  background:var(--surface); border:1px solid var(--line); border-radius:999px;
-  padding:.7rem 1.2rem; box-shadow:var(--shadow); flex:none;
+.testimonials-row{
+  display:flex; align-items:stretch; gap:1.25rem;
+  padding-left:clamp(1.25rem,4vw,3rem); margin-top:clamp(1.5rem,3vw,2rem);
 }
-.google-wordmark{ font-family:'Work Sans', sans-serif; font-weight:700; font-size:1rem; letter-spacing:.01em; }
+.marquee-viewport{ flex:1; min-width:0; overflow:hidden; }
+.t-card--google{ flex:none; align-items:flex-start; justify-content:center; }
+.google-wordmark{ font-family:'Work Sans', sans-serif; font-weight:700; font-size:1.1rem; letter-spacing:.01em; }
 .google-wordmark .g-blue{ color:#4285F4; }
 .google-wordmark .g-red{ color:#EA4335; }
 .google-wordmark .g-yellow{ color:#FBBC05; }
 .google-wordmark .g-green{ color:#34A853; }
-.google-rating-score{ font-family:var(--font-display); font-size:1.3rem; font-weight:700; }
-.google-rating-stars{ color:var(--sand); font-size:.9rem; letter-spacing:.1em; }
+.google-score-row{ display:flex; align-items:baseline; gap:.6rem; }
+.google-rating-score{ font-family:var(--font-display); font-size:1.5rem; font-weight:700; }
+.google-rating-stars{ color:var(--sand); font-size:1rem; letter-spacing:.1em; }
 .google-rating-label{ font-family:var(--font-mono); font-size:.72rem; color:var(--text-soft); white-space:nowrap; }
 .marquee{ display:flex; gap:1.25rem; width:max-content; animation:marquee 42s linear infinite; }
 .marquee:hover{ animation-play-state:paused; }
